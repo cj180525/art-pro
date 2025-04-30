@@ -1,7 +1,26 @@
 services:
-  myapp:
-    image: cj180525/art-pro:latest
-    container_name: cj180525/art-pro
+  art-pro:
+    # 如果同时有image和build，则build后的镜像名称为image名称
+    image: art-pro:latest
+    build: /home/aas/art-pro
+    # dockerfile: DockerFile
+    # context: /home/aas/test-project/
+    container_name: art-pro
+    environment:
+      - JVM_XMS=256m
+      - JVM_XMX=512m
     ports:
-      - "31000:31000"
+      - 31000:31000
+    volumes:
+      - /home/aas/art-pro/logs:/logs
     restart: always
+    networks:
+      my-net:
+        aliases:
+          - art-pro
+networks:
+  my-net:
+    # 指定已经存在的网络
+    external: true
+    driver:
+      bridge
