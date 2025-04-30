@@ -1,0 +1,7 @@
+services:
+  myapp:
+    image: cj180525/art-pro:latest
+    container_name: cj180525/art-pro
+    ports:
+      - "31000:31000"
+    restart: always
