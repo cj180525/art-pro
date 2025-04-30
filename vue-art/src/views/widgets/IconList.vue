@@ -21,7 +21,8 @@
 </template>
 
 <script lang="ts" setup>
-  import { extractIconClasses, IconfontType } from '@/utils/iconfont'
+  import { extractIconClasses } from '@/utils/iconfont'
+  import type { IconfontType } from '@/utils/iconfont'
 
   const iconType = ref('unicode')
   const options = [

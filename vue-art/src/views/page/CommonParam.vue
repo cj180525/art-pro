@@ -125,7 +125,7 @@
   import { commonParamService } from '@/api/common/commonParamApi'
   import { ApiStatus } from '@/constant/apiStatusEnum'
   import { statusOptions } from '@/constant/formConst'
-  import { el } from 'element-plus/es/locale'
+  // import { el } from 'element-plus/es/locale'
 
   // 初始化
   onMounted(() => {

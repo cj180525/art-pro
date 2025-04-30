@@ -54,14 +54,14 @@
 
 <script setup lang="ts">
   import { ArrowDown, ArrowLeft, ArrowRight, Close, CircleClose } from '@element-plus/icons-vue'
-  import { LocationQueryRaw, useRoute, useRouter } from 'vue-router'
+  import { useRoute, useRouter } from 'vue-router'
   import { useI18n } from 'vue-i18n'
 
   import { useWorkTabStore } from '@/stores/workTab'
   import { useUserStore } from '@/stores/user'
   import { formatMenuTitle } from '@/utils/menu'
   import type { WorkTabType } from '@/stores/workTab'
-  import type { MenuItemType } from '@/components/Widgets/MenuRight.vue'
+  import type { MenuItemType } from '@/types/model/menu'
 
   const { t } = useI18n()
   const workTabStore = useWorkTabStore()
@@ -202,7 +202,7 @@
   const clickTab = (item: WorkTabType) => {
     router.push({
       path: item.path,
-      query: item.query as LocationQueryRaw
+      query: item.query
     })
   }
 

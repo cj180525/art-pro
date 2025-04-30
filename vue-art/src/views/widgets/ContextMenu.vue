@@ -6,7 +6,8 @@
 </template>
 
 <script setup lang="ts">
-  import MenuRight, { MenuItemType } from '@/components/widgets/MenuRight.vue'
+  import MenuRight from '@/components/widgets/MenuRight.vue'
+  import type { MenuItemType } from '@/types/model/menu'
   import { ref } from 'vue'
 
   const menuRef = ref()

@@ -44,17 +44,8 @@
 </template>
 
 <script setup lang="ts">
-  import { ref, computed } from 'vue'
+  import type { MenuItemType } from '@/types/model/menu'
   import type { CSSProperties } from 'vue'
-
-  export interface MenuItemType {
-    key: string
-    label: string
-    icon?: string
-    disabled?: boolean
-    children?: MenuItemType[]
-    [key: string]: any
-  }
 
   interface Props {
     menuItems: MenuItemType[]

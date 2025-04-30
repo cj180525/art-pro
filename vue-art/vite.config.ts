@@ -8,7 +8,7 @@ import AutoImport from 'unplugin-auto-import/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 
 // https://vite.dev/config/
-export default ({ mode }) => {
+export default ({ mode }: { mode: string }) => {
   const { VITE_VERSION, VITE_API_URL, VITE_PORT, VITE_BASE_URL } = loadEnv(mode, process.cwd())
 
   return defineConfig({
@@ -148,10 +148,16 @@ export default ({ mode }) => {
           additionalData: `@use "@styles/variables.scss" as *; @use "@styles/mixin.scss" as *;`
         }
       }
+    },
+    build: {
+      rollupOptions: {
+        external: ['element-plus/es/locale']
+      },
+      chunkSizeWarningLimit: 3000 // 设置为更高的阈值，例如 1000 KB
     }
   })
 }
 
-function resolvePath(paths) {
+function resolvePath(paths: string): string {
   return path.resolve(__dirname, paths)
 }

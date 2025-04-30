@@ -19,3 +19,12 @@ export type MenuType = {
 
   children?: MenuType[] // 子菜单
 }
+
+export interface MenuItemType {
+  key: string
+  label: string
+  icon?: string
+  disabled?: boolean
+  children?: MenuItemType[]
+  [key: string]: any
+}
