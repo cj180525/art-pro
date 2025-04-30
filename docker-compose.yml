@@ -2,7 +2,7 @@ services:
   art-pro:
     # 如果同时有image和build，则build后的镜像名称为image名称
     image: art-pro:latest
-    build: /home/aas/art-pro
+#    build: /home/aas/art-pro
     # dockerfile: DockerFile
     # context: /home/aas/test-project/
     container_name: art-pro
