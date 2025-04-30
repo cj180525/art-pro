@@ -45,6 +45,7 @@
 </template>
 
 <script setup lang="ts">
+  import { useUserStore } from '@/stores/user'
   import { useSettingStore } from '@/stores/setting'
   import { LanguageEnum, SystemThemeEnum } from '@/constant/appEnum'
   import { useI18n } from 'vue-i18n'
@@ -76,7 +77,7 @@
   const changeLanguage = (lang: LanguageEnum) => {
     if (locale.value === lang) return
     locale.value = lang
-    userStore.setLanguage(lang)
+    useUserStore().setLanguage(lang)
   }
 </script>
 
