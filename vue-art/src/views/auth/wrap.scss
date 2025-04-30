@@ -1,0 +1,103 @@
+@use '@styles/variables.scss' as *;
+
+.form-wrap {
+  box-sizing: border-box;
+  margin-top: 80px;
+  // padding: 0 40px;
+  // height: 100%;
+  width: 100%;
+  overflow-y: auto; /* 超出时滚动 */
+  display: flex;
+  flex-direction: column; /* 👉 竖向排列 */
+  justify-content: center; /* 👉 垂直居中（主轴变成竖向） */
+  align-items: center; /* 👉 横向居中 */
+
+  .el-form {
+    width: 320px;
+    // width: 100%;
+    max-height: 600px;
+
+    .title {
+      align-self: flex-start;
+      margin-left: -2px;
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--art-text-gray-900) !important;
+    }
+
+    .sub-title {
+      align-self: flex-start;
+      margin: 10px 0 20px 0;
+      font-size: 12px;
+      color: var(--art-text-gray-500) !important;
+    }
+
+    .drag-verify {
+      position: relative;
+      padding-bottom: 15px;
+      margin-top: 20px;
+
+      .drag-verify-content {
+        position: relative;
+        z-index: 2;
+        box-sizing: border-box;
+        user-select: none;
+        border-radius: 8px;
+        transition: all 0.3s;
+
+        &.error {
+          border-color: #f56c6c;
+        }
+      }
+
+      .error-text {
+        position: absolute;
+        top: 0;
+        z-index: 1;
+        margin-top: 10px;
+        font-size: 13px;
+        color: #f56c6c;
+        transition: all 0.3s;
+
+        &.show-error-text {
+          transform: translateY(40px);
+        }
+      }
+    }
+
+    .forget-password {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 14px;
+      color: var(--art-text-gray-500);
+
+      a {
+        color: var(--main-color);
+        text-decoration: none;
+      }
+    }
+
+    .login-btn {
+      width: 100%;
+      color: #fff;
+      border: 0;
+    }
+
+    .footer {
+      margin-top: 20px;
+      font-size: 14px;
+      color: var(--art-text-gray-800);
+
+      a {
+        color: var(--main-color);
+        text-decoration: none;
+      }
+    }
+  }
+
+  .el-steps {
+    width: 320px;
+    margin-bottom: 50px;
+  }
+}

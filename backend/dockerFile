@@ -1,0 +1,16 @@
+# 使用官方Python运行时作为父镜像
+FROM openjdk:17
+
+# 将当前目录内容复制到容器的/app中
+COPY *.jar app.jar
+
+# 使端口80可用于世界范围内的连接
+EXPOSE 8080
+#
+##修改app.jar这个文件的访问时间和修改时间为当前时间，而不会修改文件的内容。
+#RUN bash -c "touch /app.jar"
+
+# 在容器启动时运行python app.py
+CMD ["--server.port=8080"]
+
+#ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","app.jar"]

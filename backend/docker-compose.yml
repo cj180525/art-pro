@@ -1,0 +1,20 @@
+services:
+  my-project-backend:
+    build:
+      dockerfile: DockerFile
+      context: /home/aas/test-project/
+    container_name: my-project-backend
+    environment:
+      - JVM_XMS=256m
+      - JVM_XMX=256m
+    ports:
+      - 8080:8080
+    restart: always
+    networks:
+      my-net:
+        aliases:
+          - my-project-backend
+networks:
+  my-net:
+    driver:
+      bridge

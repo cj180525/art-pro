@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cayjin.backend.mapper.ParamManageMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.cayjin.backend.entity.ParamManage">
+        <result column="id" property="id"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="is_deleted" property="isDeleted"/>
+        <result column="pa_table" property="paTable"/>
+        <result column="pa_field" property="paField"/>
+        <result column="field_name" property="fieldName"/>
+        <result column="field_length" property="fieldLength"/>
+        <result column="field_type" property="fieldType"/>
+        <result column="required" property="required"/>
+        <result column="sort" property="sort"/>
+        <result column="remark" property="remark"/>
+        <result column="status" property="status"/>
+    </resultMap>
+
+
+</mapper>

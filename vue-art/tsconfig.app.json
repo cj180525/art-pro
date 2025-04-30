@@ -1,0 +1,32 @@
+{
+  "extends": "@vue/tsconfig/tsconfig.dom.json",
+  "include": [
+    "env.d.ts",
+    "src/**/*",
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue"
+  ],
+  "exclude": ["node_modules", "dist", "**/*.js"],
+  "compilerOptions": {
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
+    "paths": {
+      // "@/*": ["src/*"]
+      "@/*": ["./src/*"]
+    },
+
+    // "target": "esnext",
+    // "module": "esnext",
+    "moduleResolution": "node",
+    // "strict": true,
+    // "jsx": "preserve",
+    // "sourceMap": true,
+    // "resolveJsonModule": true,
+    // "esModuleInterop": true,
+    // "lib": ["esnext", "dom"],
+    "types": ["vite/client", "node", "element-plus/global"],
+    // "skipLibCheck": true, // 针对element-plus的打包校验
+    "baseUrl": "."
+  }
+}

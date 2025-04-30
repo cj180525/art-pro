@@ -1,0 +1,71 @@
+package ${package.Controller};
+
+import com.cayjin.backend.base.BasePage;
+import com.cayjin.backend.base.RestBean;
+import ${package.Entity}.${entity};
+import ${package.Service}.${table.serviceName};
+import jakarta.annotation.Resource;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Arrays;
+import java.util.Map;
+
+/**
+ * $!{table.comment}
+ *
+ * @author ${author}
+ * @date ${date}
+ */
+#set($entityName = ${entity.substring(0,1).toLowerCase()}+${entity.substring(1)})
+@RestController
+@RequestMapping("api/${entityName}")
+public class ${table.controllerName} {
+    @Resource
+    private ${table.serviceName} ${entityName}Service;
+
+    /**
+     * 列表
+     */
+    @GetMapping("/list")
+    public RestBean<BasePage> list(@RequestParam Map<String, Object> params) {
+        BasePage page = ${entityName}Service.queryPage(params);
+        return RestBean.success(page);
+    }
+
+    /**
+     * 信息
+     */
+    @GetMapping("/info/{${entityName}Id}")
+    public RestBean<${entity}> info(@PathVariable("${entityName}Id") Long ${entityName}Id) {
+        ${entity} ${entityName} = ${entityName}Service.getById(${entityName}Id);
+        return RestBean.success(${entityName});
+    }
+
+    /**
+     * 保存
+     */
+    @PostMapping("/save")
+    public RestBean<Void> save(@RequestBody ${entity} ${entityName}) {
+        ${entityName}Service.save(${entityName});
+        return RestBean.success();
+    }
+
+    /**
+     * 修改
+     */
+    @PutMapping("/update")
+    public RestBean<Void> update(@RequestBody ${entity} ${entityName}) {
+        ${entityName}Service.updateById(${entityName});
+        return RestBean.success();
+    }
+
+    /**
+     * 删除
+     */
+    @DeleteMapping("/delete")
+    public RestBean<Void> delete(@RequestBody Long[] ${entityName}Ids) {
+        ${entityName}Service.removeByIds(Arrays.asList(${entityName}Ids));
+        return RestBean.success();
+    }
+
+}

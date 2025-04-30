@@ -1,0 +1,23 @@
+package ${package.Service};
+
+import ${superServiceClassPackage};
+import com.cayjin.backend.base.BasePage;
+import ${package.Entity}.${entity};
+
+import java.util.Map;
+
+/**
+ * $!{table.comment}
+ *
+ * @author ${author}
+ * @date ${date}
+ */
+#set($entityName = ${entity.substring(0,1).toLowerCase()}+${entity.substring(1)})
+public interface ${table.serviceName} extends ${superServiceClass}<${entity}> {
+
+    /**
+     * 分页查询
+     */
+    BasePage queryPage(Map<String, Object> params);
+
+}

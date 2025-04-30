@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cayjin.backend.mapper.MenuMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.cayjin.backend.entity.Menu">
+        <result column="id" property="id"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="is_deleted" property="isDeleted"/>
+        <result column="path" property="path"/>
+        <result column="name" property="name"/>
+        <result column="component" property="component"/>
+        <result column="title" property="title"/>
+        <result column="icon" property="icon"/>
+        <result column="show_badge" property="showBadge"/>
+        <result column="show_text_badge" property="showTextBadge"/>
+        <result column="is_hide" property="isHide"/>
+        <result column="is_hide_tab" property="isHideTab"/>
+        <result column="link" property="link"/>
+        <result column="is_iframe" property="isIframe"/>
+        <result column="keep_alive" property="keepAlive"/>
+        <result column="auth_list" property="authList"/>
+        <result column="is_in_main_container" property="isInMainContainer"/>
+        <result column="parent_id" property="parentId"/>
+    </resultMap>
+
+
+</mapper>

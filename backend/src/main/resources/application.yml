@@ -1,0 +1,77 @@
+server:
+  port: 3080
+
+spring:
+  application:
+    name: art-backend
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://123.60.104.131:3306/art?useUnicode=true&useSSL=false&characterEncoding=utf8
+    username: root
+    password: Wc@123456
+    hikari:
+      connection-timeout: 10000
+      validation-timeout: 3000
+      idle-timeout: 60000
+      login-timeout: 5
+      max-lifetime: 60000
+      maximum-pool-size: 10
+      minimum-idle: 5
+      read-only: false
+
+  data:
+    redis:
+      host: 123.60.104.131
+      port: 6379
+      password: nbcb,111
+      database: 0
+      timeout: 1800000
+      lettuce:
+        pool:
+          max-active: 20
+          max-wait: -1
+          max-idle: 5
+          min-idle: 0
+
+  mail:
+    host: smtp.163.com
+    username: 18062571682@163.com
+    password: KHaBDnQqbEJca3t7
+
+  #    password: VYWXBFMRVUIBSOOD
+  rabbitmq:
+    addresses: 123.60.104.131
+    username: guest
+    password: guest
+    virtual-host: /
+  security:
+    user:
+      name: admin
+      password: 123456
+    jwt:
+      key: asdfsadhnskne
+      expire: 7
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl   # 日志
+  global-config:   # 逻辑删除
+    db-config:
+      logic-delete-value: 1 # 逻辑已删除值(默认为 0)
+      logic-not-delete-value: 0 # 逻辑未删除值(默认为 1)
+
+logging:
+  charset:
+    console: UTF-8 # 控制台输出的字符集
+    file: utf-8 # 日志写入文件的字符集
+  config: classpath:log4j2.xml # Log4J2自定义配置的路径，放置到resources目录下
+  level:
+    root: INFO
+    javax.activation: info
+    org.apache.catalina: INFO
+    org.apache.commons.beanutils.converters: INFO
+    org.apache.coyote.http11.Http11Processor: INFO
+    org.apache.http: INFO
+    org.apache.tomcat: INFO
+    org.springframework: INFO
