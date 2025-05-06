@@ -2,17 +2,17 @@
 <Configuration>
     <!--<Configuration status="WARN" monitorInterval="30"> -->
     <properties>
-        <property name="LOG_HOME">/logs</property>
+<!--        <property name="LOG_HOME">/logs</property>-->
         <!--本地使用-->
-    <!--<property name="LOG_HOME">./logs</property>-->
+        <property name="LOG_HOME">./logs</property>
     </properties>
     <Appenders>
         <!--*********************控制台日志***********************-->
         <Console name="consoleAppender" target="SYSTEM_OUT">
             <!--设置日志格式及颜色-->
             <PatternLayout
-                    pattern="[%style{%d{ISO8601}}{bright,blue}] %highlight{%-5level} [%style{%t}{bright,yellow}] %style{%C{}}{bright,blue}: %msg%n%style{%throwable}{red}"
-                    disableAnsi="false" noConsoleNoAnsi="false"/>
+                    pattern="[%style{%d{ISO8601,Asia/Shanghai}}{bright,blue}] %highlight{%-5level} [%style{%t}{bright,yellow}] %style{%C{}}{bright,blue}: %msg%n%style{%throwable}{red}"
+                    disableAnsi="false" noConsoleNoAnsi="false" />
         </Console>
 
         <!--*********************文件日志***********************-->
@@ -22,7 +22,7 @@
                      filePattern="${LOG_HOME}/$${date:yyyy-MM}/all-%d{yyyy-MM-dd}-%i.log.gz">
             <!--设置日志格式-->
             <PatternLayout>
-                <pattern>%d %p %C{} [%t] %m%n</pattern>
+                <pattern>%d{ISO8601,Asia/Shanghai} %p %C{} [%t] %m%n</pattern>
             </PatternLayout>
             <Policies>
                 <!-- 设置日志文件切分参数 -->
@@ -46,7 +46,7 @@
             </Filters>
             <!--设置日志格式-->
             <PatternLayout>
-                <pattern>%d %p %C{} [%t] %m%n</pattern>
+                <pattern>%d{ISO8601,Asia/Shanghai} %p %C{} [%t] %m%n</pattern>
             </PatternLayout>
             <Policies>
                 <!-- 设置日志文件切分参数 -->
@@ -70,7 +70,7 @@
             </Filters>
             <!--设置日志格式-->
             <PatternLayout>
-                <pattern>%d %p %C{} [%t] %m%n</pattern>
+                <pattern>%d{ISO8601,Asia/Shanghai} %p %C{} [%t] %m%n</pattern>
             </PatternLayout>
             <Policies>
                 <!-- 设置日志文件切分参数 -->
@@ -94,7 +94,7 @@
             </Filters>
             <!--设置日志格式-->
             <PatternLayout>
-                <pattern>%d %p %C{} [%t] %m%n</pattern>
+                <pattern>%d{ISO8601,Asia/Shanghai} %p %C{} [%t] %m%n</pattern>
             </PatternLayout>
             <Policies>
                 <!-- 设置日志文件切分参数 -->
@@ -114,7 +114,7 @@
                      filePattern="${LOG_HOME}/$${date:yyyy-MM}/error-%d{yyyy-MM-dd}-%i.log.gz">
             <!--设置日志格式-->
             <PatternLayout>
-                <pattern>%d %p %C{} [%t] %m%n</pattern>
+                <pattern>%d{ISO8601,Asia/Shanghai} %p %C{} [%t] %m%n</pattern>
             </PatternLayout>
             <Policies>
                 <!-- 设置日志文件切分参数 -->
