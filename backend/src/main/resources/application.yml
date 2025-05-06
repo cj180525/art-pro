@@ -19,6 +19,8 @@ spring:
       maximum-pool-size: 10
       minimum-idle: 5
       read-only: false
+      keepalive-time: 300000
+      connection-test-query: SELECT 1
 
   data:
     redis:
@@ -26,13 +28,14 @@ spring:
       port: 6379
       password: nbcb,111
       database: 0
-      timeout: 1800000
+      timeout: 5000
       lettuce:
         pool:
           max-active: 20
-          max-wait: -1
+          max-wait: 2000
           max-idle: 5
           min-idle: 0
+        shutdown-timeout: 100ms
 
   mail:
     host: smtp.163.com
