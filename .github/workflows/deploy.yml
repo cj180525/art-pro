@@ -63,4 +63,5 @@ jobs:
             docker load -i ~/art-pro/art-pro.tar
             docker stop art-pro || true
             docker rm art-pro || true
+            docker rmi art-pro || true
             docker-compose -f /home/aas/art-pro/docker-compose.yml up -d
