@@ -4,7 +4,7 @@ import router from "@/router";
 import axios from "axios";
 
 // axios.defaults.baseURL = 'http://localhost:8080'
-axios.defaults.baseURL = 'http://123.60.104.131:3081'
+axios.defaults.baseURL = 'http://101.35.179.232:3081'
 
 const app = createApp(App)
 

@@ -7,7 +7,7 @@ spring:
 
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://123.60.104.131:3306/art?useUnicode=true&useSSL=false&characterEncoding=utf8
+    url: jdbc:mysql://101.35.179.232:3306/art?useUnicode=true&useSSL=false&characterEncoding=utf8
     username: root
     password: Wc@123456
     hikari:
@@ -24,7 +24,7 @@ spring:
 
   data:
     redis:
-      host: 123.60.104.131
+      host: 101.35.179.232
       port: 6379
       password: nbcb,111
       database: 0
@@ -44,7 +44,7 @@ spring:
 
   #    password: VYWXBFMRVUIBSOOD
   rabbitmq:
-    addresses: 123.60.104.131
+    addresses: 101.35.179.232
     username: guest
     password: guest
     virtual-host: /

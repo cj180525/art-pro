@@ -20,7 +20,7 @@ public class MybatisPlusGenerator {
 
     // 数据库服务器账户密码
     private static final String DB_NAME = "art";
-    private static final String DB_URL = "jdbc:mysql://123.60.104.131:3306/" + DB_NAME +
+    private static final String DB_URL = "jdbc:mysql://101.35.179.232:3306/" + DB_NAME +
             "?useSSL=false&useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai";
     private static final String DB_USERNAME = "root";
     private static final String DB_PASSWORD = "Wc@123456";
